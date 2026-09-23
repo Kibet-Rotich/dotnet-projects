@@ -1,0 +1,14 @@
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/bin/Debug/net8.0/PracticeSession
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/bin/Debug/net8.0/PracticeSession.deps.json
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/bin/Debug/net8.0/PracticeSession.runtimeconfig.json
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/bin/Debug/net8.0/PracticeSession.dll
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/bin/Debug/net8.0/PracticeSession.pdb
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.GeneratedMSBuildEditorConfig.editorconfig
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.AssemblyInfoInputs.cache
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.AssemblyInfo.cs
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.csproj.CoreCompileInputs.cache
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.dll
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/refint/PracticeSession.dll
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.pdb
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.genruntimeconfig.cache
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/ref/PracticeSession.dll
