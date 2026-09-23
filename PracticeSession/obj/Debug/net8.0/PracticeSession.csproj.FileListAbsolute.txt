@@ -12,3 +12,4 @@
 /home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.pdb
 /home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.genruntimeconfig.cache
 /home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/ref/PracticeSession.dll
+/home/rotich-kibet/Desktop/dotnet/PracticeSession/obj/Debug/net8.0/PracticeSession.sourcelink.json
