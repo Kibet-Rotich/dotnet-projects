@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Reflection;
+using System.Security.Cryptography;
 
 List<string?> strings = new List<string?> { "Online", "Offline", null, "Maintenance" };
 
@@ -120,9 +121,26 @@ List<string?> strings = new List<string?> { "Online", "Offline", null, "Maintena
 // }
 // Console.WriteLine($"{tem.Fahrenheit}");
 
-var profile1 = new ServerProfile("use-east-1a","us-east",4, true);
-var profile2 = profile1 with {Hostname = "us-east-1b", CpuCores = 8};
+// var profile1 = new ServerProfile("use-east-1a","us-east",4, true);
+// var profile2 = profile1 with {Hostname = "us-east-1b", CpuCores = 8};
 
-Console.WriteLine($"{profile1 == profile2}");
-var profile3 = new ServerProfile("use-east-1a","us-east",4, true);
-Console.WriteLine(profile1 == profile3);
+// Console.WriteLine($"{profile1 == profile2}");
+// var profile3 = new ServerProfile("use-east-1a","us-east",4, true);
+// Console.WriteLine(profile1 == profile3);
+// SafeCalculator.TrySquareRoot(16, out double root1);
+// SafeCalculator.TrySquareRoot(-1, out double root2);
+
+// Console.WriteLine($"root of 16 = {root1}");
+// Console.WriteLine($"root of -4 = {root2}");
+
+// SafeCalculator.TryParseAndMultiply("4", "5",out int res1);
+// SafeCalculator.TryParseAndMultiply("4", "abc",out int res2);
+// Console.WriteLine($"{res1}, {res2}");
+
+
+// var registry = new DeviceRegistry(["tecno old","samsung a57", "iphone 17", "vivo y7 old"]);
+// registry.Register("Oppo a16 old");
+// Console.WriteLine(registry.PurgeDecommissioned("old"));
+
+Console.WriteLine(TrafficController.EvaluateTraffic(34));
+Console.WriteLine(TrafficController.GetAccessLevel("Engineer",101));
