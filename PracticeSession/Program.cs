@@ -158,19 +158,33 @@ List<string?> strings = new List<string?> { "Online", "Offline", null, "Maintena
 // {
 // 	Console.WriteLine(name);
 // }
-var analyzer = new LogAnalyzer();
-analyzer.LoadLogs([
-	new LogEntry { Level = "INFO", Source = "AuthService", Message = "User signed in" },
-	new LogEntry { Level = "WARN", Source = "ApiGateway", Message = "Request rate is elevated" },
-	new LogEntry { Level = "ERROR", Source = "PaymentService", Message = "Payment timed out" },
-	new LogEntry { Level = "INFO", Source = "InventoryService", Message = "Stock updated" },
-	new LogEntry { Level = "ERROR", Source = "Database", Message = "Connection failed" },
-	new LogEntry { Level = "WARN", Source = "AuthService", Message = "Password retry limit nearly reached" },
-	new LogEntry { Level = "INFO", Source = "NotificationService", Message = "Email queued" },
-	new LogEntry { Level = "ERROR", Source = "ApiGateway", Message = "Upstream service unavailable" }
-]);
+// var analyzer = new LogAnalyzer();
+// analyzer.LoadLogs([
+// 	new LogEntry { Level = "INFO", Source = "AuthService", Message = "User signed in" },
+// 	new LogEntry { Level = "WARN", Source = "ApiGateway", Message = "Request rate is elevated" },
+// 	new LogEntry { Level = "ERROR", Source = "PaymentService", Message = "Payment timed out" },
+// 	new LogEntry { Level = "INFO", Source = "InventoryService", Message = "Stock updated" },
+// 	new LogEntry { Level = "ERROR", Source = "Database", Message = "Connection failed" },
+// 	new LogEntry { Level = "WARN", Source = "AuthService", Message = "Password retry limit nearly reached" },
+// 	new LogEntry { Level = "INFO", Source = "NotificationService", Message = "Email queued" },
+// 	new LogEntry { Level = "ERROR", Source = "ApiGateway", Message = "Upstream service unavailable" }
+// ]);
 
-foreach (var summary in analyzer.GetCountsPerLevel())
+// foreach (var summary in analyzer.GetCountsPerLevel())
+// {
+// 	Console.WriteLine($"{summary.Key}: {summary.Value}");
+// }
+
+var billingEngine = new CloudBillingEngine("Acme Corp");
+billingEngine.RecordUsage("Compute", "Premium", 100);
+billingEngine.RecordUsage("Storage", "Standard", 500);
+billingEngine.RecordUsage("Database", "Standard", 20);
+billingEngine.RecordUsage("Compute", "Standard", 100);
+billingEngine.RecordUsage("Database", "Premium", 10);
+
+Console.WriteLine($"Total bill: {billingEngine.GenerateTotalBill():C}");
+if (billingEngine.TryGetHighestCostService(out var highestCostService, out var highestCost))
 {
-	Console.WriteLine($"{summary.Key}: {summary.Value}");
+	Console.WriteLine($"Most expensive service: {highestCostService} ({highestCost:C})");
 }
+
