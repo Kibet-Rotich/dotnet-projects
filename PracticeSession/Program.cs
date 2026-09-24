@@ -11,6 +11,8 @@ List<string?> strings = new List<string?> { "Online", "Offline", null, "Maintena
 //     }
 // }
 
+
+
 // foreach(var status in strings)
 // {
 //     string statusMessage = status switch
@@ -142,5 +144,33 @@ List<string?> strings = new List<string?> { "Online", "Offline", null, "Maintena
 // registry.Register("Oppo a16 old");
 // Console.WriteLine(registry.PurgeDecommissioned("old"));
 
-Console.WriteLine(TrafficController.EvaluateTraffic(34));
-Console.WriteLine(TrafficController.GetAccessLevel("Engineer",101));
+// var gradeBook = new StudentGradeBook();
+// gradeBook.AddStudent("Amina", 92.5);
+// gradeBook.AddStudent("Brian", 68.0);
+// gradeBook.AddStudent("Clara", 84.0);
+// gradeBook.AddStudent("David", 74.5);
+// gradeBook.AddStudent("Elena", 78.5);
+// gradeBook.AddStudent("Felix", 61.0);
+
+// Console.WriteLine($"Class average: {gradeBook.GetAverageScore():F2}");
+// Console.WriteLine("Honor roll:");
+// foreach (var name in gradeBook.GetHonorRoll(75.0))
+// {
+// 	Console.WriteLine(name);
+// }
+var analyzer = new LogAnalyzer();
+analyzer.LoadLogs([
+	new LogEntry { Level = "INFO", Source = "AuthService", Message = "User signed in" },
+	new LogEntry { Level = "WARN", Source = "ApiGateway", Message = "Request rate is elevated" },
+	new LogEntry { Level = "ERROR", Source = "PaymentService", Message = "Payment timed out" },
+	new LogEntry { Level = "INFO", Source = "InventoryService", Message = "Stock updated" },
+	new LogEntry { Level = "ERROR", Source = "Database", Message = "Connection failed" },
+	new LogEntry { Level = "WARN", Source = "AuthService", Message = "Password retry limit nearly reached" },
+	new LogEntry { Level = "INFO", Source = "NotificationService", Message = "Email queued" },
+	new LogEntry { Level = "ERROR", Source = "ApiGateway", Message = "Upstream service unavailable" }
+]);
+
+foreach (var summary in analyzer.GetCountsPerLevel())
+{
+	Console.WriteLine($"{summary.Key}: {summary.Value}");
+}
