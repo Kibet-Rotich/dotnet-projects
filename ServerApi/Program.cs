@@ -1,51 +1,28 @@
+// 1. The Builder: This is where you configure the app before it starts
+// (Like adding database connections, CORS, or authentication)
 var builder = WebApplication.CreateBuilder(args);
+
+// 2. The App: The actual running web server
 var app = builder.Build();
 
-// 1. Data Store (In-Memory for demonstration)
-var servers = new List<ServerRecord>
-{
-    new(1, "192.168.1.10", "Online"),
-    new(2, "192.168.1.20", "Maintenance"),
-    new(3, "192.168.1.30", "Offline")
-};
+// 3. The Routes: Mapping HTTP methods to logic
+app.MapGet("/", () => "Welcome to your first C# Web API!");
 
-// 2. GET all servers (Returns JSON automatically)
-app.MapGet("/api/servers", () => Results.Ok(servers));
-
-// 3. GET server by ID using LINQ
-app.MapGet("/api/servers/{id:int}", (int id) =>
+// Returning an anonymous object. ASP.NET Core automatically serializes this to JSON.
+app.MapGet("/api/health", () => 
 {
-    var server = servers.FirstOrDefault(s => s.Id == id);
-    return server is not null 
-        ? Results.Ok(server) 
-        : Results.NotFound(new { Message = $"Server with ID {id} not found." });
+    return Results.Ok(new { Status = "Healthy", Uptime = "99.9%" });
 });
 
-// 4. POST to create a new server
-app.MapPost("/api/servers", (CreateServerDto dto) =>
-{
-    int nextId = servers.Count > 0 ? servers.Max(s => s.Id) + 1 : 1;
-    var newServer = new ServerRecord(nextId, dto.IpAddress, "Online");
-    servers.Add(newServer);
-
-    return Results.Created($"/api/servers/{newServer.Id}", newServer);
+app.MapGet("/kibet", () => {
+    return Results.Ok(new {message= "Hey kibet", success = true});
 });
 
-// 5. PUT to update status using record 'with' expression
-app.MapPut("/api/servers/{id:int}/status", (int id, UpdateStatusDto dto) =>
+// A POST route extracting data from the URL path
+app.MapPost("/api/greet/{name}", (string name) => 
 {
-    var index = servers.FindIndex(s => s.Id == id);
-    if (index == -1) return Results.NotFound();
-
-    // Records are immutable: create a clone with updated status and replace in list
-    servers[index] = servers[index] with { Status = dto.Status };
-
-    return Results.Ok(servers[index]);
+    return Results.Ok(new { Message = $"Hello, {name}! Your data was received." });
 });
 
+// 4. Start listening on the port
 app.Run();
-
-// --- Domain Models & DTOs (Records) ---
-public record ServerRecord(int Id, string IPAddress, string Status);
-public record CreateServerDto(string IpAddress);
-public record UpdateStatusDto(string Status);

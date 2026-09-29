@@ -23,3 +23,4 @@
 /home/rotich-kibet/Desktop/dotnet/ServerApi/obj/Debug/net8.0/ServerApi.pdb
 /home/rotich-kibet/Desktop/dotnet/ServerApi/obj/Debug/net8.0/ServerApi.genruntimeconfig.cache
 /home/rotich-kibet/Desktop/dotnet/ServerApi/obj/Debug/net8.0/ref/ServerApi.dll
+/home/rotich-kibet/Desktop/dotnet/ServerApi/obj/Debug/net8.0/ServerApi.sourcelink.json

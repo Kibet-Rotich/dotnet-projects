@@ -1,0 +1,8 @@
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.csproj.AssemblyReference.cache
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.GeneratedMSBuildEditorConfig.editorconfig
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.AssemblyInfoInputs.cache
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.AssemblyInfo.cs
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.csproj.CoreCompileInputs.cache
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.MvcApplicationPartsAssemblyInfo.cs
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.MvcApplicationPartsAssemblyInfo.cache
+/home/rotich-kibet/Desktop/dotnet/EquiBillApi/obj/Debug/net8.0/EquiBillApi.sourcelink.json
