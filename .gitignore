@@ -1,0 +1,19 @@
+# build output
+bin/
+obj/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# local settings / db
+appsettings.Development.json
+*.db
+*.db-shm
+*.db-wal
+
+# OS
+.DS_Store
