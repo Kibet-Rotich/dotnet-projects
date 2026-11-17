@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 
 // 2. We will register our database and custom services here later...
 // e.g., builder.Services.AddScoped<IBillSplitter, BillSplitterService>();
-builder.Services.AddDbContext(options =>
+builder.Services.AddDbContext<EquiBillDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
     
 var app = builder.Build();
