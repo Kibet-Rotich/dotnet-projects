@@ -20,7 +20,7 @@ public class BuildingsController : ControllerBase
 
     // POST: api/buildings
     [HttpPost]
-    public async Task CreateBuilding([FromBody] BuildingCreateDto dto)
+    public async Task<IActionResult> CreateBuilding([FromBody] BuildingCreateDto dto)
     {
         // Map DTO to the Entity Framework Model
         var building = new Building
@@ -38,7 +38,7 @@ public class BuildingsController : ControllerBase
 
     // GET: api/buildings/5
     [HttpGet("{id}")]
-    public async Task GetBuilding(int id)
+    public async Task<IActionResult> GetBuilding(int id)
     {
         var building = await _context.Buildings.FindAsync(id);
         
@@ -49,7 +49,7 @@ public class BuildingsController : ControllerBase
 
     // GET: api/buildings
     [HttpGet]
-    public async Task GetAllBuildings()
+    public async Task<IActionResult> GetAllBuildings()
     {
         var buildings = await _context.Buildings.ToListAsync();
         return Ok(buildings);
